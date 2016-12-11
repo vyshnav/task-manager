@@ -4,11 +4,11 @@
 <input type="text" class="form-control input-lg" placeholder="Enter a Todo" ng-keypress="saveTodo($event)" ng-model="todoInput">
 </div>
 </div>
-<div class="row col-md-12 todos">
+<div class="row col-md-12 box">
 <div class="alert alert-info text-center" ng-hide="todos.length > 0">
 <h3>No Todos yet!</h3>
 </div>
-<div ng-repeat="todo in todos" class="todo col-md-12 col-sm-12 col-xs-12" ng-class="todo.isCompleted ? 'strike' : ''">
+<div ng-repeat="todo in todos" class="list col-md-12 col-sm-12 col-xs-12" ng-class="todo.isCompleted ? 'strike' : ''">
 <div class="col-md-1 col-sm-1 col-xs-1">
 <input type="checkbox" ng-checked="todo.isCompleted" ng-click="updateStatus($event, todo.id, $index)">
 </div>

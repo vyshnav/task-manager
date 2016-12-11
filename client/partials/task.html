@@ -1,22 +1,22 @@
 <div class="container" ng-controller="taskCtrl">
 	
-	<div class="row col-md-12">
+	<div class="row col-md-12 box">
 		<div>
 		
 		<form name="form" ng-submit="saveTask()">
 			<input type="text" class="form-control input-lg" placeholder="Create a new task" name="taskInput" ng-model="taskInput" required>
-			<button type="submit" class="btn btn-success pull-right"  ng-disabled='form.taskInput.$invalid'>Create Task</button>
+			<button type="submit" class="btn btn-success"  ng-disabled='form.taskInput.$invalid'>Create Task</button>
 	    </form>
 	    <div class="col-md-3 col-sm-3 col-xs-3 no-padder">
 	    <input type="text" class="form-control" placeholder="Search Task" ng-model="query.taskName"></input>
 	</div>
 		</div>
 	</div>
-	<div class="row col-md-12">
+	<div class="row col-md-12 box">
 		<div class="alert alert-info text-center" ng-hide="tasks.length > 0">
 		<h3>No Tasks yet!</h3>
 		</div>
-			<div ng-repeat="task in tasks | filter:query" class="todo col-md-12 col-sm-12 col-xs-12">
+			<div ng-repeat="task in tasks | filter:query" class="list col-md-12 col-sm-12 col-xs-12">
 				<a href="#!/todo/{{task._id}}">
 					<div class="col-md-10 col-sm-10 col-xs-10">
 					<span ng-show="!isEditable[$index]">{{task.taskName}}</span>

@@ -1,58 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 * {
--webkit-border-radius: 0 !important;
--moz-border-radius: 0 !important;
-border-radius: 0 !important;
-font-family: calibri;
-}
+  font-family: "Raleway"; }
+
+.navbar {
+  background-color: #fff;
+  border: none; }
+  .navbar:before {
+    background: linear-gradient(to right, #9E7CC1, #8ECDEA);
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    height: 3px;
+    left: 0; }
+  .navbar .navbar-brand {
+    color: #9d9d9d; }
+    .navbar .navbar-brand:active {
+      color: #9d9d9d; }
+    .navbar .navbar-brand:focus {
+      color: #9d9d9d; }
+    .navbar .navbar-brand:hover {
+      color: #8460aa; }
+
+.btn {
+  border-radius: 4px; }
+
+form .btn {
+  margin: 10px auto; }
 
 .no-padder {
-   padding: 0 !important;
-   margin: 0 !important;
-}
+  padding: 0 !important;
+  margin: 0 !important; }
 
 .strike span {
-text-decoration: line-through;
-color: #ccc;
-}
-.todos {
-padding: 20px;
-}
-.todo {
-padding: 10px;
-font-size: 21px;
-border-bottom: 1px solid;
-}
-.todo .btn {
-margin-left: 5px;
-width: 72px;
-}
-.todo:hover {
-background: #e7e7e7;
-}
+  text-decoration: line-through;
+  color: #ccc; }
+
+.box {
+  padding: 20px; }
+
+.list {
+  padding: 10px;
+  font-size: 21px;
+  border-bottom: 1px solid  #8460aa; }
+
+.list .btn {
+  margin-left: 5px;
+  width: 72px; }
+
+.list:hover {
+  background: #e7e7e7;
+  border: 1px solid #8460aa; }
+
 @media (max-width: 991px) {
-.todo .btn {
-margin-bottom: 10px;
-}
-.todo input[type=checkbox] {
-width: 25px;
-height: 25px;
-}
-}
+  .list .btn {
+    margin-bottom: 10px; }
+  .list input[type=checkbox] {
+    width: 25px;
+    height: 25px; } }
+
 @media (max-width: 991px) {
-.todo .btn-warning {
-margin-top: 10px;
-margin-left: 0px
-}
-}
+  .list .btn-warning {
+    margin-top: 10px;
+    margin-left: 0px; } }
+
 @media (max-width: 450px) {
-.todo .col-xs-8 {
-width: 85%;
-}
-.todo .col-xs-3 {
-width: 100%;
-text-align: center;
-border-top: 1px dashed #aaa;
-padding-top: 10px;
-margin-top: 10px;
-}
-}
+  .list .col-xs-8 {
+    width: 85%; }
+  .list .col-xs-3 {
+    width: 100%;
+    text-align: center;
+    border-top: 1px dashed #aaa;
+    padding-top: 10px;
+    margin-top: 10px; } }
