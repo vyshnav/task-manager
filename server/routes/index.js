@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('tm', ['tasks']);
+var db = mongojs('mongodb://admin:aadmin123@ds133158.mlab.com:33158/tm', ['tasks']);
 /* GET home page. */
 router.get('/', function(req, res) {
 res.render('index');
