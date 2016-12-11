@@ -1,0 +1,37 @@
+<div class="container" ng-controller="taskCtrl">
+	
+	<div class="row col-md-12">
+		<div>
+		
+		<form name="form" ng-submit="saveTask()">
+			<input type="text" class="form-control input-lg" placeholder="Create a new task" name="taskInput" ng-model="taskInput" required>
+			<button type="submit" class="btn btn-success pull-right"  ng-disabled='form.taskInput.$invalid'>Create Task</button>
+	    </form>
+	    <div class="col-md-3 col-sm-3 col-xs-3 no-padder">
+	    <input type="text" class="form-control" placeholder="Search Task" ng-model="query.taskName"></input>
+	</div>
+		</div>
+	</div>
+	<div class="row col-md-12">
+		<div class="alert alert-info text-center" ng-hide="tasks.length > 0">
+		<h3>No Tasks yet!</h3>
+		</div>
+			<div ng-repeat="task in tasks | filter:query" class="todo col-md-12 col-sm-12 col-xs-12">
+				<a href="#!/todo/{{task._id}}">
+					<div class="col-md-10 col-sm-10 col-xs-10">
+					<span ng-show="!isEditable[$index]">{{task.taskName}}</span>
+			    </a>		
+					<input ng-show="isEditable[$index]" type="text" value="{{task.taskName}}" ng-keypress="editTask($event,$index);">
+                     <input ng-show="isEditable[$index]" type="button" class="btn btn-warning" value="Cancel" ng-click="isEditable[$index] = false" />
+					</div>
+				
+				<div class="col-md-2 col-sm-2 col-xs-2 no-padder">
+				<input type="button" class="btn btn-info" ng-disabled="isEditable[$index]" class="pull-right" value="Edit" ng-click="isEditable[$index] = true" />	
+
+				<input type="button" class="btn btn-danger" class="pull-right" value="Delete" ng-click="deleteTask($index)" />
+
+				</div>
+			</div>
+		
+	</div>
+</div>
